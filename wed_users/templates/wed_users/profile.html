@@ -1,0 +1,34 @@
+{% extends "wed_gen/components/base.html" %}
+
+{% block site_title %}ข้อมูลผู้ใช้ | {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+  <div class="content-container-narrow">
+    <div class="icon-text-2">
+      <i class="fa fa-user-circle" style="font-size:80px;color:#1877F2"></i>
+      <h2 class="content-title-2">สวัสดี {{ user.username }}</h2>
+  </div>
+    <p class="text-center">
+      <a href="{% url 'dashboard' %}">สถานที่โปรด</a>
+      <a href="{% url 'profile' %}">ข้อมูลผู้ใช้</a>
+      <a href="{% url 'password_change' %}">เปลี่ยนรหัสผ่าน</a>
+    </p>
+    <h4 class="text-center">ข้อมูลผู้ใช้</h4>
+    {% if flash_message %}
+      <h5 class="text-g text-center">{{ flash_message }}</h5>
+    {% endif %}
+    <form action="{% url 'profile' %}" method="POST">
+      {% csrf_token %}
+      <div class="box-1">
+      <p>{{ form.non_field_errors }}</p>
+      <p>{{ form.as_p }}</p>
+      <p>{{ extended_form.as_p }}</p>  
+      </div>
+      <div class="text-center">
+        <button class="button button-p" type="submit">บันทึก</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

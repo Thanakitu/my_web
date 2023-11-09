@@ -1,0 +1,41 @@
+{% load static %}
+<header class="site-header">
+    <a class="site-header-gen site-header-item" href="{% url 'home'%}">
+        {% if request.COOKIES.theme == "dark" %}
+          <img src="{% static 'wed_gen/logod1.png' %}">
+        {% else %}
+          <img src="{% static 'wed_gen/logo.png' %}">
+        {% endif %}
+    </a>
+    <a class="site-header-item text-w" href="{% url 'locations'%}">
+        <span>สถานที่ท่องเที่ยว</span>
+    </a>
+    <a class="site-header-item text-w" href="{% url 'hotels'%}">
+        <span>ที่พัก</span>
+    </a>
+    <a class="site-header-item text-w" href="{% url 'ress'%}">
+        <span>ร้านอาหาร & คาเฟ่</span>
+    </a>
+    <a class="site-header-item text-w" href="{% url 'about'%}">
+        <span>เกี่ยวกับ</span>
+    </a>
+    {% if user.is_authenticated %}
+    <a class="site-header-item" href="{% url 'dashboard'%}">
+        <i class="fa fa-user" style="font-size:34px;color:#1877F2;"></i><span class="text-bb" style="display: inline; margin: 5px;">{{ user.username }}</span>
+    </a>
+    <a class="site-header-item" href="{% url 'logout'%}">
+        <i class="fa fa-sign-out" style="font-size:34px;color:red;"></i><span class="text-r" style="display: inline; margin: 5px;">ออกจากระบบ</span>
+    </a>
+    {% else %}
+    <a class="site-header-item" href="{% url 'login'%}">
+        <span class="text-bb" style="display: inline; margin: 7px;">เข้าสู่ระบบ</span><i class="fa fa-sign-in" style="font-size:34px;color:#025dc5;"></i>
+    </a>
+    <a class="site-header-item" href="{% url 'register'%}">
+        <span class="text-r" style="display: inline; margin: 7px;">สมัครสมาชิก</span><i class="fa fa-user-plus" style="font-size:30px;color:red;"></i>
+    </a>
+    {% endif %}
+    <p class="material-symbols-outlined site-header-end site-header-item-1" style="font-size:30px;">   
+        <a  class="light" href="{% url 'change_theme' %}?theme=default">light_mode</a>
+        <a  class="dark" href="{% url 'change_theme' %}?theme=dark">dark_mode</a>
+    </p>
+</header>

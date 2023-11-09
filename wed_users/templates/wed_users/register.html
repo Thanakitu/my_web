@@ -1,0 +1,52 @@
+{% extends "wed_gen/components/base.html" %}
+{% load static %}
+{% block site_title %}สมัครสมาชิก | {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single ">
+    <div> 
+      <h1 class="content-title text-center">สมัครสมาชิก</h1>
+      <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="box-1">
+           <div>
+             <p class="content-title-1 text-5">{{ form.username.label_tag }}</p>
+             <p class="text-center">{{ form.username }}</p>
+             <div class="content-container-narrow-1 text-r">
+             <p>{{ form.username.errors }}</p>
+            </div>
+           </div>
+           <div>
+             <p class="content-title-1 text-5">{{ form.email.label_tag }}</p>
+             <p class="text-center">{{ form.email }}</p>
+             <div class="content-container-narrow-1 text-r">
+             <p>{{ form.email.errors }}</p>
+             </div>
+           </div>
+           <div>
+             <p class="content-title-1 text-6">{{ form.password1.label_tag }}</p>
+             <p class="text-center">{{ form.password1 }}</p>
+             <div class="content-container-narrow-1 text-r">
+             <p>{{ form.password1.errors }}</p>
+             </div>
+           </div>
+           <div class="content-title">
+             <p class="content-title-1 text-7">{{ form.password2.label_tag }}</p>
+             <p class="text-center">{{ form.password2 }}</p>
+             <div class="content-container-narrow-1 text-r">
+             <p>{{ form.password2.errors }}</p>
+             </div>
+            </div>
+        </div>
+      </div>
+        <div class="text-center">
+          <button class="button button-p" type="submit">สมัครสมาชิก</button>
+        </div>
+        <p class="text-center"> 
+          <a href="{% url 'login' %}">เข้าสู่ระบบ</a>
+        </p>
+      </form>
+    </div>
+  </section>
+{% endblock %}

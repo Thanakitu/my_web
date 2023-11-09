@@ -1,0 +1,31 @@
+{% extends "wed_gen/components/base.html" %}
+{% load static %}
+{% block site_title %}ที่พัก | {% endblock %}
+
+{% block content %}
+<section class="content-section">
+  <div class="content-container">
+    <h2 class="content-title">ที่พัก</h2>
+    <div class="grid">
+    {% for hotel in hotels %}
+        <div >
+           <a >
+            <img class="image-block" src="{% static hotel.image %}">
+           </a>
+            <div>
+            <h3 class="hotel-title">
+              {{hotel.title}}<i><h6 style="display: inline; margin: 10px;"> {{ hotel.star }}</h6></i>
+            </h3>
+           </div>
+            <div class="text-center">
+              <h5  style="display: center; margin: 5px;">เช็คราคาและจองห้องพัก </h5><a href="{{hotel.agoda}}"><img class="image-block-4" style="display: inline; margin: 5px;" src="{% static hotel.image_agoda %}"></a> <a href="{{hotel.tra}}"><img class="image-block-5" style="display: inline; margin: 5px;" src="{% static hotel.image_tra %}"></a> 
+            </div>
+            <div class="icon-text">
+              <i class="fa fa-map-marker" style="font-size:28px;color:#ff0037;"></i><h6 class="location-map" style="display: inline; margin: 15px;"><a href="{{hotel.googlemap}}">{{ hotel.at_location }}</a></h6>
+            </div>
+         </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

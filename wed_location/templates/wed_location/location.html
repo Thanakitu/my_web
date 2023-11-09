@@ -1,0 +1,64 @@
+{% extends "wed_gen/components/base.html" %}
+{% load static %}
+{% block site_title %} {{location.title}} | {% endblock %}
+
+{% block content %}
+<section class="content-section">
+   <div class="content-container-2">
+{% if location is not None %}
+<div class="grid-2">
+      <img class="image-block-2" src="{% static location.image_b %}">
+      <div>
+         <h3>{{location.title}}</h3>
+         <p>{{location.description}}</p>
+         <div class="icon-text content-title-2">
+            <i class="fa fa-clock-o" style="font-size:28px;"></i><h6 style="display: inline; margin: 10px;">วันและเวลาทำการ : {{ location.date }}</h6>
+          </div>
+         <div class="grid-2">
+            {% if user.is_authenticated %}
+              {% if not is_favorite_location %}
+                <form action="{% url 'favorite_location' location.id %}" method="post">
+                  <div class="icon-text">
+                     <i class="fa fa-star" style="font-size:28px;color:#E9AB17"></i><h6 style="display: inline; margin: 10px;">เพิ่มเป็นสถานที่โปรด</h6>
+                   </div>
+                  <p1> ∗∗∗ระดับความชอบ∗∗∗</p1>
+                  {% csrf_token %}
+                  <div class="form-field">
+                  {{ form.level }}
+                  {{ form.level.errors }}
+                  </div>
+                  <div>
+                    <button class="button button-p" type="submit">เพิ่มสถานที่โปรด</button>
+                  </div>
+                </form>
+               {% else %}
+                  <h6 class="text-y">∗∗∗คุณได้เลือกสถานที่นี้เป็นสถานที่โปรดแล้ว∗∗∗</h6>
+               {% endif %}
+               <div >
+                  <a class="map location-map-1" href="{{location.googlemap}}">
+                  <img src="{% static 'wed_location/map.jpg' %}">
+                  </a>
+                  <div class="icon-text">
+                     <i class="fa fa-map-marker" style="font-size:34px;color:#ff0037;"></i><h6 class="location-map" style="display: inline; margin: 15px;"><a href="{{location.googlemap}}">Google Map</a></h6>
+                  </div>
+               </div>  
+         </div>   
+            {% else %}
+               <div>
+                  <a class="map location-map-1" href="{{location.googlemap}}">
+                     <img src="{% static 'wed_location/map.jpg' %}">
+                     </a>
+                  <div class="icon-text">
+                     <i class="fa fa-map-marker" style="font-size:34px;color:#ff0037;"></i><h6 class="location-map" style="display: inline; margin: 15px;"><a href="{{location.googlemap}}">Google Map</a></h6>
+                  </div>
+               </div> 
+            {% endif %}
+              
+      </div>   
+ </div>
+{% else %}
+   <p>ไม่พบสถานที่</p>
+{% endif %}
+</div>
+</section>
+{% endblock %}

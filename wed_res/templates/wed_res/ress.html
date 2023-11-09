@@ -1,0 +1,38 @@
+{% extends "wed_gen/components/base.html" %}
+{% load static %}
+{% block site_title %}ร้านอาหาร & คาเฟ่ | {% endblock %}
+
+{% block content %}
+<section class="content-section">
+  <div class="content-container">
+    <h2 class="content-title">ร้านอาหาร & คาเฟ่</h2>
+    <div class="grid">
+    {% for res in ress %}
+        <div >
+           <a >
+            <img class="image-block" src="{% static res.image %}">
+           </a>
+            <div>
+            <h3 class="res-title" style="margin: 15px;">
+              {{res.title}}
+            </h3>
+           </div>
+            <div class="icon-text">
+              <i class="fa fa-clock-o" style="font-size:28px;"></i><h6 style="display: inline; margin: 10px;">เวลาเปิด/ปิด: {{ res.date }}</h6>
+            </div>
+            <div class="icon-text">
+              <i class="fa fa-phone" style="font-size:28px;"></i><h6 style="display: inline; margin: 10px;">เบอร์โทรศัพท์: {{ res.phone }}</h6>
+            </div>
+            <div class="icon-text">
+              <i class="fa fa-internet-explorer" style="font-size:26px;"></i><h6 style="display: inline; margin: 8px;">เว็บไซต์: <a href="{{res.wed}}">{{res.wed}}</h6>
+            </div>
+            <div class="icon-text">
+              <i class="fa fa-map-marker" style="font-size:28px;color:#ff0037;"></i><h6 class="location-map" style="display: inline; margin: 15px;"><a href="{{res.googlemap}}">{{ res.at_location }}</a></h6>
+            </div>
+         </div>
+    {% endfor %}
+    
+    </div>
+  </div>
+</section>
+{% endblock %}

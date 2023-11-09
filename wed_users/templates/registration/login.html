@@ -1,0 +1,38 @@
+{% extends "wed_gen/components/base.html" %}
+{% load static %}
+{% block site_title %}เข้าสู่ระบบ | {% endblock %}
+<link rel="stylesheet" type="text/main" href="{% static 'main.css' %}">
+{% block content %}
+<section class="content-section content-section-single">
+ <div class="content-container text-center">
+    <h1 class="content-title">เข้าสู่ระบบ</h1>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="box-1">
+        <div class="content-title-2">
+          <label for="{{ form.username.id_for_label }}"></label>
+          <p class="content-title-1 text-2">ชื่อผู้ใช้ หรือ อีเมล:</p>
+          {{ form.username }}
+        </div>
+        <div class="content-title">
+          <label for="{{ form.password.id_for_label }}"></label>
+          <p class="content-title-1 text-3">รหัสผ่าน:</p>
+          {{ form.password }}
+        </div>
+      </div>
+        {% if request.GET.next %}
+          <input type="hidden" name="next" value="{{ request.GET.next }}">
+        {% endif %}
+        <div>
+          <button class="button button-p " type="submit">เข้าสู่ระบบ</button>
+        </div>
+        <p>
+          <a href="{% url 'register' %}">สมัครสมาชิก</a>
+        </p>
+        <p>
+          <a href="{% url 'password_reset' %}">ลืมรหัสผ่าน?</a>
+        </p>
+      </form>
+ </div>     
+</section>
+{% endblock %}

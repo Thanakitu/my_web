@@ -1,0 +1,234 @@
+body.dark {
+    color: #f4f4f4;
+    background-color: #222222;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: white;
+}
+
+body.dark .text-w{
+  color: white;
+}
+
+body.dark .text-ww{
+  color: #d6d6d6;
+}
+
+body.dark .text-r{
+  color: rgb(255, 0, 0);
+}
+
+body.dark .text-y {
+  color: rgb(216, 124, 19);
+}
+
+body.dark .text-abc {
+  color: #0571ec;
+}
+
+body.dark .text-d{
+  color: rgb(0, 0, 0);
+}
+
+body.dark .box {
+  background-color: #222222;
+}
+
+body.dark .box-1 {
+  background-color: #222222;
+  border: 1px solid #888888;
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102);
+  border-radius: 25px;
+  display: block;
+  margin-bottom: 16px;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px
+}
+
+body.dark .box-2 {
+  background-color: #222222;
+  border: 1px solid #888888;
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102);
+  border-radius: 25px;
+  display: block;
+  margin-bottom: 16px;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: auto;
+
+  margin-bottom: 20px
+}
+
+body.dark .site-header {
+  background-color: #1b1b1b;
+  border-bottom-color: #000000;
+}
+
+body.dark .site-header-item a,
+body.dark .site-header-item button {
+  color: white;
+}
+
+body.dark .site-header-menu {
+  background-color: #222222;
+  border-bottom-color: #111111;
+}
+
+body.dark .site-footer {
+  background-color: #111111;
+}
+
+body.dark input[type='text'],
+body.dark input[type='email'],
+body.dark input[type='password'],
+body.dark textarea {
+  color: white;
+  background-color: #333333;
+}
+
+
+body.dark .home-landing {
+  background-color: #333333;
+  background-image: url('รวม.jpg');
+}
+
+body.dark .location-title a:not(:hover) {
+  color: white;
+}
+
+body.dark .purpose-banner {
+  background-color: rgb(230, 230, 230);
+  color: rgb(36, 36, 36);
+}
+
+body.dark .purpose-banner a {
+  color: rgb(36, 36, 36);
+}
+
+body.dark .button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: white;
+  background-color: #292929;
+  box-shadow: 0px 2px 6px 0px rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 18px 18px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+body.dark  .button:hover {
+  background-color: #111111;
+}
+
+body.dark .button-p {
+  background-color: #0D79F2;
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102);
+}
+
+body.dark .button-p:hover {
+  background-color: #085dbd;
+}
+
+body.dark .button-p1 {
+  background-color: #0D79F2;
+  box-shadow: 0px 2px 6px 0px rgb(255, 255, 255);
+}
+
+body.dark .button-p1:hover {
+  background-color: #085dbd;
+}
+
+body.dark .button-r {
+  background-color: #ff0c0c;
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102);
+}
+
+body.dark .button-r:hover {
+  background-color: #aa0000;
+}
+
+body.dark .button-r1 {
+  background-color: #ff0c0c;
+  box-shadow: 0px 2px 6px 0px rgb(255, 255, 255);
+}
+
+body.dark .button-r1:hover {
+  background-color: #aa0000;
+}
+
+body.dark .home-section {
+  background-color: #eeeeee;
+  background-image: url('4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 106px 6px;
+}
+
+body.dark .image-block {
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102);
+  display: block;
+  border-radius: 50px;
+  width: 520px;
+  height: 400px;
+  margin-bottom: 12px;
+}
+
+body.dark .image-block-1 {
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102)rgb(44, 44, 44);
+  display: block;
+  border-radius: 25px;
+  width: 800px;
+  height: 400px;
+  margin-bottom: 12px;
+}
+
+body.dark .image-block-2 {
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102);
+  display: block;
+  border-radius: 50px;
+  width: 780px;
+  height: 640px;
+  margin-bottom: 12px;
+}
+
+body.dark .image-block-3 {
+  box-shadow: 0px 2px 6px 0px rgb(102, 102, 102);
+  display: block;
+  border-radius: 25px;
+  width: 280px;
+  height: 190px;
+  margin-bottom: 12px;
+}
+
+body.dark .location-map-1{
+  color: #ff0037;
+  text-decoration: none;
+}
+
+body.dark .location-map-1:hover {
+  color: #ff658c;
+  text-decoration: none;
+}

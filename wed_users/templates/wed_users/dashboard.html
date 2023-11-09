@@ -1,0 +1,39 @@
+{% extends "wed_gen/components/base.html" %}
+{% load static %}
+{% block site_title %}แดชบอร์ด | {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+  <div class="content-container-narrow ">
+    <div class="icon-text-2">
+      <i class="fa fa-user-circle" style="font-size:80px;color:#1877F2"></i>
+      <h2 class="content-title-2">สวัสดี {{ user.username }}</h2>
+  </div>
+
+    <p class="text-center">
+      <a href="{% url 'dashboard' %}">สถานที่โปรด</a>
+      <a href="{% url 'profile' %}">ข้อมูลผู้ใช้</a>
+      <a href="{% url 'password_change' %}">เปลี่ยนรหัสผ่าน</a>
+    </p>
+    <h5 class="text-center">***สถานที่โปรดของคุณ***</h5>
+    {% for location_pivot in favorite_location_pivots %}
+      {% with location=location_pivot.location %}
+        <div class="box">
+          <h6>
+            <a href="{% url 'location' location.id %}">{{ location.title }}</a>
+          </h6>
+          <a href="{% url 'location' location.id %}">
+            <img class="image-block-3" src="{% static location.image_a %}">
+          </a>
+          <h6>ระดับความชอบ : {{ location_pivot.level_label }}</h6>     
+          <form action="{% url 'unfavorite_location' location.id %}" method="post">
+            {% csrf_token %}
+            <div><button class="button button-r" type="submit">ลบสถานที่โปรดของคุณ</button></div>
+          </form>
+        </div>
+      {% endwith %}
+    {% endfor %}
+
+  </div>
+</section>
+{% endblock %}

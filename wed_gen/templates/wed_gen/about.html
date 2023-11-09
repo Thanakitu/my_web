@@ -1,0 +1,43 @@
+{% extends "wed_gen/components/base.html" %}
+{% load static %}
+{% block site_title %}เกี่ยวกับเรา | {% endblock %}
+
+{% block content %}
+<section class="content-section">
+<div class="content-container">
+<div class="grid-2">
+    <div>
+      <h1 class="content-title text-center">เกี่ยวกับเรา</h1>
+      <p1>   จุดประสงค์ในการสร้างเว็บไซค์นี้เพื่อการส่งเสริมการท่องเที่ยวและการเข้าชมเว็บไซต์นี้สามารถเป็นช่องทางในการส่งเสริมการท่องเที่ยวในนครปฐมโดยการนำเสนอสถานที่ท่องเที่ยวที่น่าสนใจในพื้นที่ให้กับนักท่องเที่ยว
+      การเสริมสร้างความรู้สึกเชื่อมโยงกับท้องถิ่นเว็บไซต์นี้อาจมีวัตถุประสงค์ในการสร้างความรู้สึกเชื่อมโยงกับท้องถิ่นโดยการนาเสนอข้อมูลเกี่ยวกับวัฒนธรรมประเพณีการอาหารท้องถิ่นและทรัพยากรทางธรรมชาติที่นครปฐมมี
+      และสามารถเป็นช่องทางการโปรโมตธุรกิจในท้องถิ่นเช่นโรงแรมร้านอาหารร้านขายของฝากและกิจกรรมต่างๆที่สร้างรายได้ให้กับชุมชนในพื้น</p1>
+    </div>
+    <div>
+        <img class="image-block-1" src="{% static 'wed_gen/long.png' %}">
+    </div>
+</div>    
+</div>
+</section>
+<section class="content-section">
+<div class="content-container">
+    <h2 class="content-title text-center">สมาชิกภายในกลุ่ม</h2>
+    <div class="grid"> 
+        <div>
+            <img class="image-block" src="{% static 'wed_gen/krit.jpg' %}">
+            <h5 class="text-center">นายชินกฤต ทรงลักษณ์</h5>
+            <p class="text-center">รหัส 630910466</p>
+        </div>
+        <div>
+            <img class="image-block" src="{% static 'wed_gen/few1.jpg' %}">        
+            <h5 class="text-center">นายธนกฤต อุสาพรหม</h5>
+            <p class="text-center">รหัส 630910473</p>
+        </div>
+        <div>
+            <img class="image-block" src="{% static 'wed_gen/ptch.jpg' %}">
+            <h5 class="text-center">นายพรรษรุจ นิลจันทร์พัธ์ศรี</h5>
+            <p class="text-center">รหัส 630911153</p>
+        </div>
+    </div>
+</div>     
+</section>
+{% endblock %}
